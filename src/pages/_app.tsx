@@ -11,12 +11,15 @@ import { ThemeProvider } from "~/components/theme-provider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { Analytics } from "@vercel/analytics/react"
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <div className={GeistSans.className}>
       <ThemeProvider attribute="class" defaultTheme="dark">
         <Component {...pageProps} />
         <ToastContainer theme="dark" />
+        <Analytics />
       </ThemeProvider>
     </div>
   );
